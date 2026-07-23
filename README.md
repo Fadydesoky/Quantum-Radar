@@ -96,6 +96,31 @@ addable "without modifying the Radar". That drives every decision below.
 ```
 
 
+```
+Observation
+     │
+     ▼
+Radar.processObservation()
+     │
+     ▼
+For each Rule
+     │
+     ▼
+Rule.evaluate()
+     │
+     ├── No violation
+     │
+     └── Violation
+            │
+            ▼
+Collect Violations
+            │
+            ▼
+Create Fine
+            │
+            ▼
+Update Statistics
+```
 
 ### Why this is extensible
 
