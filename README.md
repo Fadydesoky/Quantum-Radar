@@ -127,3 +127,12 @@ else in the system needs to know.
 Both are cumulative across every observation the radar has ever processed,
 not just one fine, since a plate can rack up violations over multiple
 readings.
+
+
+## Future Enhancements
+
+- BusSpeedRule
+- RedLightRule
+- MobilePhoneRule
+- External configuration for speed limits
+- Unit Tests
