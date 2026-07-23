@@ -26,6 +26,27 @@ addable "without modifying the Radar". That drives every decision below.
 | `Radar` | Holds a `List<Rule>`. For each observation, runs every rule and bundles any violations into a `Fine`. Also keeps a running history so it can answer "total fines per plate" and "violation counts per rule". |
 | `Main` | Wires it all together and demonstrates the system on a handful of sample observations. |
 
+
+Observation
+      |
+      v
+ Radar
+      |
+List<Rule>
+   |      |
+   v      v
+Speed   Seatbelt
+
+      |
+      v
+Violation
+
+      |
+      v
+Fine
+
+
+
 ### Why this is extensible
 
 Adding a new rule — say "Bus speed shouldn't exceed 70" or a brand new
