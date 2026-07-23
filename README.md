@@ -27,23 +27,64 @@ addable "without modifying the Radar". That drives every decision below.
 | `Main` | Wires it all together and demonstrates the system on a handful of sample observations. |
 
 
-Observation
-      |
-      v
- Radar
-      |
-List<Rule>
-   |      |
-   v      v
-Speed   Seatbelt
 
-      |
-      v
-Violation
+## Architecture
 
-      |
-      v
-Fine
+```text
+                         +------------------+
+                         |   Observation    |
+                         |------------------|
+                         | plateNumber      |
+                         | date             |
+                         | carType          |
+                         | speed            |
+                         | seatbelt         |
+                         +--------+---------+
+                                  |
+                                  | processObservation()
+                                  v
+                        +----------------------+
+                        |        Radar         |
+                        |----------------------|
+                        | List<Rule> rules     |
+                        | History / Reports    |
+                        +----+-----------+-----+
+                             |           |
+               iterates over |           | creates
+                             |           v
+                             |    +--------------+
+                             |    |     Fine     |
+                             |    |--------------|
+                             |    | Violations[] |
+                             |    | Total Amount |
+                             |    +------+-------+
+                             |           ^
+                             |           |
+                             v           |
+                  +-------------------------+
+                  |          Rule           |
+                  |-------------------------|
+                  | evaluate(observation)   |
+                  +-----------+-------------+
+                              ^
+              implements      |      implements
+                     +--------+---------+
+                     |                  |
+        +---------------------+   +----------------------+
+        |   MaxSpeedRule      |   |    SeatbeltRule      |
+        +---------------------+   +----------------------+
+                     \                  /
+                      \                /
+                       \              /
+                        v            v
+                     +----------------------+
+                     |      Violation       |
+                     |----------------------|
+                     | ruleId               |
+                     | description          |
+                     | amount               |
+                     +----------------------+
+```
 
 
 
