@@ -1,6 +1,15 @@
-# Quantum Radar
+# Quantum Radar 🚦
 
-A small, extensible traffic-radar simulator built for the Fawry Quantum Internship Challenge.
+An extensible traffic radar simulator built in Java following Object-Oriented Design and SOLID principles.
+
+## Features
+
+- Object-Oriented Design (OOP)
+- SOLID Principles
+- Extensible Rule Engine
+- Traffic Violation Processing
+- Fine Aggregation
+- Summary Reports
 
 ## How to run
 
