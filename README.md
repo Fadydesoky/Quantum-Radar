@@ -6,6 +6,14 @@
 
 An extensible traffic radar simulator built in Java following Object-Oriented Design and SOLID principles.
 
+| Language | Java |
+|----------|------|
+| Paradigm | Object-Oriented Programming |
+| Principles | SOLID |
+| Pattern | Strategy |
+| Challenge | Fawry Quantum Internship |
+
+
 ## Features
 
 - Object-Oriented Design (OOP)
@@ -126,6 +134,15 @@ Create Fine
 Update Statistics
 ```
 
+## Design Pattern
+
+The project follows the Strategy Pattern.
+
+Each traffic rule implements the `Rule` interface and can be plugged into the Radar without modifying its implementation.
+
+This keeps the Radar closed for modification but open for extension, following the Open/Closed Principle.
+
+
 ### Why this is extensible
 
 Adding a new rule — say "Bus speed shouldn't exceed 70" or a brand new
@@ -174,3 +191,7 @@ readings.
 - MobilePhoneRule
 - External configuration for speed limits
 - Unit Tests
+
+---
+
+Built as part of the Fawry Quantum Internship Challenge.
