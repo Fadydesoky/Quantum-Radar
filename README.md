@@ -1,3 +1,7 @@
+![Java](https://img.shields.io/badge/Java-17-orange)
+![OOP](https://img.shields.io/badge/OOP-Design-blue)
+![SOLID](https://img.shields.io/badge/SOLID-Principles-green)
+
 # Quantum Radar 🚦
 
 An extensible traffic radar simulator built in Java following Object-Oriented Design and SOLID principles.
